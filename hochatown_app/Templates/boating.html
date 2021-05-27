@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+                crossorigin="anonymous">
+  <title>Document</title>
+  <style>
+    #map{
+        height: 550px;
+        width: 1400px;
+    }
+</style>
+</head>
+<body>
+  <div  class="boating_container d-flexbox">
+    <header>
+      <div class="boatingheader">
+        <h1>Welcome to Beavers Bend Lake and we hope you enjoy your boating experiance!</h1>
+      </div>
+    </header>
+    <div>
+      <div class=" d-flex align-items-center">
+        <div class="lakeimage container-fluid" style="background-image: url({% static 'images/header_photo.jpeg' %});
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 550px;">
+    </div>
+    <div id="map"></div>
+    <script>
+        function initMap(){
+            var options = {
+                zoom:11,
+                center:{lat:34.1327916, lng:-94.6798474}
+            }
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            //click on map
+            google.maps.event.addListener(map, 'click' , function(event){
+                addMarker({coords:event.latLng});
+            });
+
+
+            //array of markers
+            var markers = [
+            {
+                coords:{lat:34.1376743, lng:-94.6974191},
+                content:'<h1>Beavers bend floats</h1>'},
+                {
+                coords:{lat:34.0450612, lng:-94.6267143},
+                content:'<h1>Ambush Adventures</h1>'},
+                {
+                coords:{lat:34.1626627, lng:-94.7151839},
+                content:'<h1>Beavers Bend Marina</h1>'}
+            ]
+            // loop through markers
+            for(var i =0; i < markers.length; i++ ){
+                addMarker(markers[i]);
+            }
+
+            //Add Marker function
+            function addMarker(props){ 
+                var marker = new google.maps.Marker({
+                    position:props.coords,
+                    map:map
+                });
+                if(props.content){
+                    var infoWindow = new google.maps.InfoWindow({
+                content:props.content
+            });
+
+            marker.addListener('click', function(){
+                infoWindow.open(map, marker);
+            });
+                }
+            }
+        }
+    </script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv66HOXYlFNd4FgIGmcXrRLPIxEru5nQE&callback=initMap&libraries=&v=weekly"
+    ></script>
+
+  </div>
+  <div>
+    <footer class="boating_footer">
+      <div class="d-flex justify-content-evenly align-items-center">
+        <p class="boatingp">
+          Here are several boating companies for you to explore:
+        </p>
+        <a href="/lake">Back to lake</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

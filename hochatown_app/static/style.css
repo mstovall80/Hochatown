@@ -1,0 +1,222 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* outline: 1px dashed red; */
+}
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.top_header{
+    height: 100px;
+    width: auto 0;
+    background-color: chocolate;
+    
+}
+
+.container{
+    background-image: image("images/saloon_hochatown.jpeg");
+}
+.welcome{
+    color: rgb(218, 200, 209);
+}
+
+.add_restaurant{
+    color: cornsilk;
+    margin-top: 15px;
+}
+
+.review_restaurant{
+    color: cornsilk;
+}
+
+.food{
+    color:beige;
+}
+
+.srb{
+    color: rgb(208, 3, 3);
+}
+
+.mb{
+    margin-left: 25px;
+}
+
+.comments{
+    margin-top: 30px;
+    color: beige;
+}
+
+.review{
+    margin-top: 160px;
+    margin-left: 370px;
+    color: rgb(251, 251, 251);
+}
+
+.description{
+    margin-top: 100px;
+    color: beige;
+}
+
+.selectrest{
+    color: rgb(233, 221, 224);
+}
+
+.addrest{
+    background-color: rgb(92, 92, 119);
+    color: rgb(233, 227, 218);
+}
+
+.goback{
+    color: blanchedalmond;
+    margin-top: 15px;
+}
+.display{
+    color: rgb(223, 26, 174);
+    background-color: black;
+    margin-left: 65px;
+    
+}
+
+.display_rev{
+    margin-left: 230px;
+    margin-top: 100px;
+    
+}
+.review_box{
+    margin-left: 30px;
+}
+
+.marquee{
+    margin-top: 65px;
+    color: chartreuse;
+}
+
+.restaurant{
+    background-color: rgb(250, 249, 249);
+    color: blueviolet;
+    margin-top: 100px;
+    margin-left: 570px;
+    border-radius: 10px;
+}
+.restaurant_two{
+    margin-top: 25px;
+    margin-left: 48px;
+    margin-right: 57px;
+    
+}
+.boxes{
+    border-radius: 10px;
+}
+.bigfoot{
+    height: 650px;
+    width: 611px;
+}
+
+.added_rest{
+    margin-left: 100px;
+    margin-top: 10px;
+}
+.boxes{
+    margin-left: 10px;
+    justify-content: space-around;
+}
+.main_header_welcome{
+    margin-right: 200px;
+}
+.back_to_main{
+    color: bisque;
+    margin-top: 15px;
+}
+
+.activities{
+    margin-right: 50px;
+}
+
+.fishingcontainer{
+    background-color: black;
+}
+
+.fishinghead{
+    color: antiquewhite;
+    
+}
+
+
+
+.fishingfooter{
+    padding-top: 15px;
+    color: antiquewhite;
+}
+
+.boating_container{
+    background-color: blueviolet;
+}
+
+.boatingheader{
+    background-color: black;
+    color: crimson;
+}
+
+.boating_footer{
+    height: 100px; 
+    width: auto;
+    background-color: rgb(15, 2, 2);
+}
+
+.boatingp{
+    margin-left: 300px;
+    padding-top: 15px;
+    color: azure;
+}
+
+.footera{
+    color: beige;
+}
+
+.cabincontainer{
+    background-color: black;
+}
+
+.jumbotron{
+    color: beige;
+}
+
+.cabinmar{
+    height: 560px;
+    width: 1350px;
+    margin-left: 35px;
+}
+.rentalh{
+    background-color: black;
+    color: antiquewhite;
+}
+
+.list-group-item{
+    padding-top: 5px;
+}
+.cabinp{
+    color: bisque;
+    margin-left: 530px;
+    
+    
+}
+.nav-link{
+    color: #e73c7e;
+
+}

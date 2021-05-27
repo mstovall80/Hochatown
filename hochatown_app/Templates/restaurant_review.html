@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="bg-dark">
+
+    <div class="container-fluid" style="background-image: url({% static 'images/reviewimage.jpeg' %});
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 600px;">
+
+    <div class="d-flex justify-content-evenly">
+        <div class="selectrest">
+            <p><h1>Selected Restaurant: {{restaurant.name}}</h1></p>
+        </div>
+        <div class=" d-flex align-items-center">
+            <a class="srb" href="/dinning"><h4>Return back to the Dinning Room.</h4></a> ||
+            <a class="srb" href="/add_restaurant"><h4>Back to Add Restaurant</h4></a>
+        </div>
+    </div>
+            <div class=" review d-flex ">
+
+                <form action="/added_rev" method="POST">
+                    {% csrf_token %}
+                    <div>
+                        <label for="review"><h2>Review:</h2></label>
+                        <textarea class="form-control" name="review" id="review" cols="70" rows="5"></textarea>
+                        <input type="hidden" name="restaurant_id" value="{{restaurant.id}}">
+                        <br>
+                        <input type="submit" value="Add review" class="btn btn-primary btn-lg btn-block"/>
+                    </div>
+                </form>
+            </div>
+</body>
+</html>
